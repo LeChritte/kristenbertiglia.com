@@ -133,7 +133,7 @@
       // Build gallery HTML
       const galleryItems = project.images.map((img, i) => {
         const isWide = project.images.length % 2 !== 0 && i === project.images.length - 1;
-        return `<div class="img-placeholder img-placeholder--4x3${isWide ? '" style="grid-column: 1 / -1' : ''}" data-label="Project Photo ${i + 1}"></div>`;
+        return `<img src="${img}" alt="${project.title} — photo ${i + 1}" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px; display:block;${isWide ? ' grid-column: 1 / -1;' : ''}">`;
       }).join('');
 
       // Build services tags

@@ -12,7 +12,11 @@ window.PROJECTS = [
       "Storage was the top priority — we introduced under-bed drawers, a shared built-in desk wall, and labeled cubbies that make tidying up easy enough for the kids to actually do it. Every surface had a purpose, and every item had a home.",
       "The result is a room both brothers are proud of, with enough personality to feel special and enough durability to survive real childhood."
     ],
-    images: ["placeholder", "placeholder", "placeholder", "placeholder"],
+    images: [
+      "/images/projects/boys-bedroom-1.jpg",
+      "/images/projects/boys-bedroom-2.jpg",
+      "/images/projects/boys-bedroom-3.jpg"
+    ],
     featured: true
   },
   {
@@ -28,7 +32,11 @@ window.PROJECTS = [
       "We kept the existing sofa bones but reupholstered in a performance fabric, swapped the rug for a washable option, and added flexible lighting that transitions from bright play mode to cozy evening ambiance. A low side table doubled as toy storage; a basket system kept things tidy in minutes.",
       "No major construction, no massive budget — just thoughtful changes that made the room feel completely transformed."
     ],
-    images: ["placeholder", "placeholder", "placeholder"],
+    images: [
+      "/images/projects/living-room-1.jpg",
+      "/images/projects/living-room-2.jpg",
+      "/images/projects/living-room-3.jpg"
+    ],
     featured: true
   },
   {
@@ -44,7 +52,11 @@ window.PROJECTS = [
       "The key was modular, wall-mounted storage that keeps the floor clear and makes cleanup intuitive even for a 4-year-old. Each category of toy got its own labeled bin at the right height.",
       "The parents got their home back; the kids got a space that's truly theirs."
     ],
-    images: ["placeholder", "placeholder", "placeholder"],
+    images: [
+      "/images/projects/playroom-1.jpg",
+      "/images/projects/playroom-2.jpg",
+      "/images/projects/playroom-3.jpg"
+    ],
     featured: true
   },
   {
@@ -60,7 +72,10 @@ window.PROJECTS = [
       "A window seat with hidden storage, floating bookshelves, and the right lighting made it a destination — for the kids and their parents. We layered in soft textiles and a small side table to make it feel fully considered.",
       "This project is a perfect example of a low-lift change with an outsized impact on how the family actually uses their home."
     ],
-    images: ["placeholder", "placeholder"],
+    images: [
+      "/images/projects/reading-1.jpg",
+      "/images/projects/reading-2.jpg"
+    ],
     featured: false
   },
   {
@@ -76,7 +91,11 @@ window.PROJECTS = [
       "We kept the existing crib-to-toddler conversion bed, introduced a small play table, and updated the textiles and wall art to feel slightly more grown-up without losing the cozy magic. A new bookshelf display made her book collection a design feature.",
       "The result is a room that will grow with their daughter through at least age six."
     ],
-    images: ["placeholder", "placeholder", "placeholder"],
+    images: [
+      "/images/projects/toddler-1.jpg",
+      "/images/projects/toddler-2.jpg",
+      "/images/projects/toddler-3.jpg"
+    ],
     featured: false
   },
   {
@@ -92,7 +111,11 @@ window.PROJECTS = [
       "We introduced a custom hook rail at kids' height, individual labeled cubbies for each child, a boot tray, and a bench with hidden storage — all within a modest budget. Each child's section was color-coded to make ownership intuitive.",
       "The family reported that morning routines became noticeably calmer within the first week."
     ],
-    images: ["placeholder", "placeholder", "placeholder"],
+    images: [
+      "/images/projects/mudroom-1.jpg",
+      "/images/projects/mudroom-2.jpg",
+      "/images/projects/mudroom-3.jpg"
+    ],
     featured: false
   }
 ];

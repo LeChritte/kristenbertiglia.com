@@ -111,7 +111,7 @@
         card.href = '/portfolio/project/?slug=' + project.slug;
         card.innerHTML = `
           <div class="project-card-img">
-            <div class="img-placeholder img-placeholder--4x3" data-label="Project Image"></div>
+            <img src="${project.images[0]}" alt="${project.title}" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
           </div>
           <div class="project-card-body">
             <span class="project-card-tag">${project.type}</span>
