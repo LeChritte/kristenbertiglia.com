@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Kristen Bertiglia Interiors</title>
+  <meta name="description" content="Start a project inquiry with Kristen Bertiglia Interiors. Low-lift design for busy families in the SF Bay Area.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- ─── Navigation ──────────────────────────────────────────────────────── -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">Kristen Bertiglia Interiors</a>
+      <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/contact/" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- ─── Left: intro + details ────────────────────────────────────── -->
+          <div class="contact-intro fade-in">
+            <span style="display:block; font-size:0.7rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-accent); margin-bottom:20px;">Get in Touch</span>
+            <h1>Let's Talk About<br><em>Your Space</em></h1>
+            <div class="divider"></div>
+            <p>I take on a limited number of low-lift projects and family-focused room refreshes each month. Tell me a bit about what you're working with, and I'll be in touch within a few days.</p>
+            <p>No project is too small — some of the most impactful work I do takes less than a week to plan and execute.</p>
+
+            <div class="contact-detail-list">
+              <div class="contact-detail">
+                <div class="contact-detail-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <label>Based in</label>
+                  <span>San Francisco Bay Area, CA</span>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <label>Services</label>
+                  <span>In-person &amp; Virtual Consultations</span>
+                </div>
+              </div>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </div>
+                <div class="contact-detail-text">
+                  <label>LinkedIn</label>
+                  <a href="https://www.linkedin.com/in/kristenbertiglia" target="_blank" rel="noopener noreferrer">linkedin.com/in/kristenbertiglia</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ─── Right: form ──────────────────────────────────────────────── -->
+          <div class="contact-form-wrap fade-in">
+            <h2>Project Inquiry</h2>
+            <form
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              id="contact-form"
+              novalidate
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                    autocomplete="name"
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="email">Email <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                    autocomplete="email"
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="city">City / Neighborhood</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  placeholder="e.g. Inner Sunset, SF"
+                  autocomplete="address-level2"
+                >
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="space-type">Type of Space <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                  <select id="space-type" name="space_type" required>
+                    <option value="" disabled selected>Select a space</option>
+                    <option value="Living Room">Living Room</option>
+                    <option value="Bedroom">Bedroom</option>
+                    <option value="Playroom">Playroom</option>
+                    <option value="Whole Home">Whole Home</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget">Budget Range <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                  <select id="budget" name="budget" required>
+                    <option value="" disabled selected>Select a range</option>
+                    <option value="Under $1k">Under $1k</option>
+                    <option value="$1k–$3k">$1k–$3k</option>
+                    <option value="$3k–$10k">$3k–$10k</option>
+                    <option value="$10k+">$10k+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Tell me about your space</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="What's not working? What do you love? Any upcoming milestones or constraints? The more context, the better."
+                  rows="5"
+                ></textarea>
+              </div>
+
+              <!-- Honeypot field for spam prevention -->
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+              <button type="submit" class="btn btn-primary form-submit">Send Inquiry</button>
+              <p class="form-note">I respond to all inquiries within 2–3 business days.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ────────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-brand-name">Kristen Bertiglia Interiors</span>
+          <p class="footer-tagline">Low-lift interior design for busy families who want beautiful, livable spaces.</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="https://www.linkedin.com/in/kristenbertiglia" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="/contact/">Get in Touch</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Kristen Bertiglia Interiors. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/projects.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Basic form submission feedback
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+          btn.textContent = 'Sending…';
+          btn.disabled = true;
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

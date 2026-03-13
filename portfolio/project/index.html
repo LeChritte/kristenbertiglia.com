@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project — Kristen Bertiglia Interiors</title>
+  <meta name="description" content="Project detail — Kristen Bertiglia Interiors">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <style>
+    /* Loading / error states */
+    .project-loading,
+    .project-error {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .project-loading p {
+      color: var(--color-muted);
+      font-size: 0.9rem;
+    }
+    .project-error h2 {
+      font-size: 2rem;
+      color: var(--color-tan);
+    }
+    .project-error p {
+      color: var(--color-muted);
+      margin: 0 auto 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Navigation ──────────────────────────────────────────────────────── -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">Kristen Bertiglia Interiors</a>
+      <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/portfolio/" class="active">Portfolio</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="project-main">
+    <!-- Populated by JS based on ?slug= param -->
+    <div class="container">
+      <div class="project-loading">
+        <p>Loading project&hellip;</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ─── Footer ────────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-brand-name">Kristen Bertiglia Interiors</span>
+          <p class="footer-tagline">Low-lift interior design for busy families who want beautiful, livable spaces.</p>
+        </div>
+        <div>
+          <p class="footer-col-title">Navigate</p>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/portfolio/">Portfolio</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Connect</p>
+          <ul class="footer-links">
+            <li><a href="https://www.linkedin.com/in/kristenbertiglia" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="/contact/">Get in Touch</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Kristen Bertiglia Interiors. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/projects.js"></script>
+  <script src="../../js/main.js"></script>
+  <script>
+    (function () {
+      const main = document.getElementById('project-main');
+
+      // Parse slug from query string
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+
+      // Find project
+      const project = slug && window.PROJECTS
+        ? window.PROJECTS.find(p => p.slug === slug)
+        : null;
+
+      // Not found
+      if (!project) {
+        main.innerHTML = `
+          <div class="container" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="project-error">
+              <h2>Project Not Found</h2>
+              <p>We couldn't find a project matching that URL.</p>
+              <a href="/portfolio/" class="btn btn-primary">Back to Portfolio</a>
+            </div>
+          </div>
+        `;
+        document.title = 'Project Not Found — Kristen Bertiglia Interiors';
+        return;
+      }
+
+      // Update page title and meta
+      document.title = project.title + ' — Kristen Bertiglia Interiors';
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', project.scope);
+
+      // Build gallery HTML
+      const galleryItems = project.images.map((img, i) => {
+        const isWide = project.images.length % 2 !== 0 && i === project.images.length - 1;
+        return `<div class="img-placeholder img-placeholder--4x3${isWide ? '" style="grid-column: 1 / -1' : ''}" data-label="Project Photo ${i + 1}"></div>`;
+      }).join('');
+
+      // Build services tags
+      const servicesTags = project.services.map(s =>
+        `<span class="service-tag">${s}</span>`
+      ).join('');
+
+      // Build narrative paragraphs
+      const narrative = project.description.map(p =>
+        `<p>${p}</p>`
+      ).join('');
+
+      // Render full project content
+      main.innerHTML = `
+        <!-- Hero -->
+        <div class="project-detail-hero">
+          <div class="container">
+            <a href="/portfolio/" class="project-back">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 12H5M12 5l-7 7 7 7"/>
+              </svg>
+              Back to Portfolio
+            </a>
+            <h1>${project.title}</h1>
+            <p class="project-detail-location">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              ${project.location}
+            </p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">
+                <label>Project Scope</label>
+                <p>${project.scope}</p>
+              </div>
+              <div class="project-meta-item">
+                <label>Time to Complete</label>
+                <span>${project.timeToComplete}</span>
+              </div>
+              <div class="project-meta-item">
+                <label>Services</label>
+                <div class="project-services-list">
+                  ${servicesTags}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Body: narrative + scope sidebar -->
+        <div class="project-body">
+          <div class="container">
+            <div class="project-body-inner">
+              <div class="project-narrative fade-in">
+                ${narrative}
+              </div>
+              <aside class="project-scope-box fade-in">
+                <label>About This Project</label>
+                <p>${project.scope}</p>
+                <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--color-border);">
+                  <label style="display:block; font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">Type</label>
+                  <span style="font-size: 0.9375rem;">${project.type}</span>
+                </div>
+                <div style="margin-top: 20px;">
+                  <label style="display:block; font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-accent); margin-bottom:12px;">Duration</label>
+                  <span style="font-size: 0.9375rem;">${project.timeToComplete}</span>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery -->
+        <div class="project-gallery">
+          <div class="container">
+            <div class="project-gallery-grid fade-in">
+              ${galleryItems}
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <section class="cta-section">
+          <div class="container">
+            <div class="fade-in">
+              <h2>Interested in a similar project?</h2>
+              <p>I'd love to hear about your space. Let's figure out what would make the biggest difference.</p>
+              <a href="/contact/" class="btn btn-outline-white">Get in Touch</a>
+            </div>
+          </div>
+        </section>
+      `;
+
+      // Re-run fade-in observers for newly added elements
+      const fadeEls = main.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08 }
+        );
+        fadeEls.forEach(el => observer.observe(el));
+      } else {
+        fadeEls.forEach(el => el.classList.add('visible'));
+      }
+    })();
+  </script>
+
+</body>
+</html>
